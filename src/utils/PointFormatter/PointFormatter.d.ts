@@ -1,0 +1,1 @@
+export function formattedPoints(points : number): string;
