@@ -13,15 +13,11 @@ function formatCard(data: YGOCardResponse): YGOCard {
     def: data.def,
     desc: data.desc,
     genesysPoints: data?.misc_info[0]?.genesys_points,
-    images: [],
+    images: data?.card_images?.map((d) => d?.image_url_small),
   };
 }
 
 export function formattedResponse(data: YGOCardResponse[]): YGOCard[] {
-  let res: YGOCard[] = [];
-  data.forEach((d) => {
-    res.push(formatCard(d));
-  });
-
+  let res: YGOCard[] = data.map((d) => formatCard(d));
   return res;
 }

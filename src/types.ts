@@ -10,7 +10,7 @@ export interface YGOCardResponse {
   def: number;
   desc: string;
   misc_info: any[];
-  images: string[];
+  card_images: any[];
 }
 
 export interface YGOCard {

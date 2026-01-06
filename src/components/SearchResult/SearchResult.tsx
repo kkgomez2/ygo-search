@@ -9,18 +9,23 @@ type Props = {
 function SearchResult({ card }: Props) {
   return (
     <div className="search-result">
-      <div className="search-result-image"></div>
-      <div className="search-result-info">
-        <div className="search-result-info-header">
-          <div className="search-result-name">
-            <h4>{card.name}</h4>
+      <div className="search-result-image-container">
+        <img className="search-result-image" src={card.images[0]} />
+      </div>
+      <div className="search-result-info-container">
+        <div className="search-result-info">
+          <div className="search-result-info-text">
+            <div className="search-result-name">{card.name}</div>
+
+            <div>{card.type}</div>
           </div>
+
           <div className="search-result-point">
-            <h3>{formattedPoints(card.genesysPoints)}</h3>
+            <div>{formattedPoints(card.genesysPoints)}</div>
           </div>
         </div>
-        <span>{card.type}</span>
-        <button>Add</button>
+
+        <button>Add to Deck</button>
       </div>
     </div>
   );

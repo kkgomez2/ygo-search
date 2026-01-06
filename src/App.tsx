@@ -67,13 +67,11 @@ function App() {
       />
       {loading && <>Loading...</>}
       {searchCards.length > 0 && (
-        <ul>
+        <div className="search-result-container">
           {searchCards.map((card: YGOCard, index) => (
-            <li key={index}>
-              <SearchResult card={card} />
-            </li>
+            <SearchResult card={card} key={index} />
           ))}
-        </ul>
+        </div>
       )}
     </main>
   );
