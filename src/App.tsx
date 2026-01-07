@@ -9,10 +9,12 @@ function App() {
 
   return (
     <main>
-      <h1>YGO Card Search</h1>
-      <section className="card-info"></section>
-      <section className="deck"></section>
-      <CardSearch />
+      {/* <h1>YGO Card Search</h1> */}
+      <div className="app">
+        <section className="card-info"></section>
+        <section className="deck"></section>
+        <CardSearch />
+      </div>
     </main>
   );
 }

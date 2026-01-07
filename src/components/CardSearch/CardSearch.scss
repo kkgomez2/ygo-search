@@ -1,0 +1,15 @@
+.card-search {
+  // height: 100%;
+}
+
+input {
+  // height: 15vh;
+}
+
+.search-result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  overflow: scroll;
+  height: 85vh;
+}

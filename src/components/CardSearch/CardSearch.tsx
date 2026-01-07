@@ -3,6 +3,7 @@ import type { YGOCard } from "../../types";
 import { useDebounce } from "react-use";
 import SearchResult from "../SearchResult/SearchResult";
 import { formattedResponse } from "../../api/YGOCard/YGOCard";
+import "./CardSearch.scss"
 
 type Props = {};
 
