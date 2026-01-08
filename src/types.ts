@@ -1,7 +1,6 @@
 export interface YGOCardResponse {
   id: number;
   name: string;
-  category: string;
   type: string;
   typeLine: string[];
   level: number;
@@ -16,7 +15,6 @@ export interface YGOCardResponse {
 export interface YGOCard {
   id: number;
   name: string;
-  category: string;
   type: string;
   typeLine: string[];
   level: number;

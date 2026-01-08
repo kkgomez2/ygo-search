@@ -3,7 +3,7 @@ import type { YGOCard } from "../../types";
 import { useDebounce } from "react-use";
 import SearchResult from "../SearchResult/SearchResult";
 import { formattedResponse } from "../../api/YGOCard/YGOCard";
-import "./CardSearch.scss"
+import "./CardSearch.scss";
 
 type Props = {};
 
@@ -24,41 +24,41 @@ function CardSearch({}: Props) {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
 
-    const fetchCards = async (query: string) => {
-      try {
-        const endpoint = `${API_BASE_URL}?fname=${query}&misc=yes&format=genesys`;
-  
-        setLoading(true);
-        const response = await fetch(endpoint, API_OPTIONS);
-        if (!response.ok) {
-          throw new Error("Failed to fetch cards");
-        }
-  
-        const result = await response.json();
-        if (result.Response === "False") {
-          setSearchCards([]);
-          return;
-        }
-  
-        const formattedData = formattedResponse(result.data);
-  
-        setSearchCards(formattedData || []);
-      } catch (err) {
-        let errorStr = `Error fetching movies: ${err}`;
-        console.error(errorStr);
-      } finally {
-        setLoading(false);
+  const fetchCards = async (query: string) => {
+    try {
+      const endpoint = `${API_BASE_URL}?fname=${query}&misc=yes&format=genesys`;
+
+      setLoading(true);
+      const response = await fetch(endpoint, API_OPTIONS);
+      if (!response.ok) {
+        throw new Error("Failed to fetch cards");
       }
-    };
-  
-    useEffect(() => {
-      if (debouncedSearchTerm.length > 0) {
-        fetchCards(debouncedSearchTerm);
+
+      const result = await response.json();
+      if (result.Response === "False") {
+        setSearchCards([]);
+        return;
       }
-    }, [debouncedSearchTerm]);
+
+      const formattedData = formattedResponse(result.data);
+
+      setSearchCards(formattedData || []);
+    } catch (err) {
+      let errorStr = `Error fetching movies: ${err}`;
+      console.error(errorStr);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (debouncedSearchTerm.length > 0) {
+      fetchCards(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
 
   return (
-    <section className="card-search">
+    <div>
       <input
         type="text"
         placeholder="Search for cards here"
@@ -73,7 +73,7 @@ function CardSearch({}: Props) {
           ))}
         </div>
       )}
-    </section>
+    </div>
   );
 }
 

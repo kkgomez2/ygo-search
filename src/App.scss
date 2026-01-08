@@ -15,9 +15,10 @@ section {
   padding: 0.6rem;
   overflow-y: hidden;
   margin-bottom: 0;
-}
+  width: 100%;
 
-section.deck {
-  flex-grow: 2;
-  max-width: 66%;
+  .deck {
+    flex-grow: 2;
+    max-width: 66%;
+  }
 }
