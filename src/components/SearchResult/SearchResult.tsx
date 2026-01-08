@@ -25,7 +25,14 @@ function SearchResult({ card, setSelectedCard }: Props) {
           <GenesysPoints points={card.genesysPoints} />
         </div>
 
-        <button>Add to Deck</button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log(`${card.name} was added to Deck!`);
+          }}
+        >
+          Add to Deck
+        </button>
       </div>
     </div>
   );
