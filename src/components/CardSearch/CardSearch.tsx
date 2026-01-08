@@ -5,7 +5,9 @@ import SearchResult from "../SearchResult/SearchResult";
 import { formattedResponse } from "../../api/YGOCard/YGOCard";
 import "./CardSearch.scss";
 
-type Props = {};
+type Props = {
+  setSelectedCard: Function
+};
 
 const API_BASE_URL = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
@@ -16,7 +18,7 @@ const API_OPTIONS = {
   },
 };
 
-function CardSearch({}: Props) {
+function CardSearch({setSelectedCard}: Props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [searchCards, setSearchCards] = useState<YGOCard[]>([]);
@@ -69,7 +71,7 @@ function CardSearch({}: Props) {
       {searchCards.length > 0 && (
         <div className="search-result-container">
           {searchCards.map((card: YGOCard, index) => (
-            <SearchResult card={card} key={index} />
+            <SearchResult card={card} key={index} setSelectedCard={setSelectedCard}/>
           ))}
         </div>
       )}

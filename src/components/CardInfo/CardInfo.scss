@@ -1,0 +1,40 @@
+.card-info {
+  padding: 25px;
+}
+
+.card-info-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-info-name {
+  font-weight: 700;
+}
+
+.card-info-summary {
+  display: flex;
+}
+
+.card-info-image-container {
+  max-width: 200px;
+}
+
+.card-info-stats-container {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+.card-info-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info-type {
+  padding: 20px 0;
+}
+
+.card-info-desc {
+  overflow-y: scroll;
+  max-height: 40vh;
+}

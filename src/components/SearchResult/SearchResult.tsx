@@ -1,14 +1,16 @@
 import type { YGOCard } from "../../types";
 import { formattedPoints } from "../../utils/PointFormatter/PointFormatter";
+import GenesysPoints from "../GenesysPoints/GenesysPoints";
 import "./SearchResult.scss";
 
 type Props = {
   card: YGOCard;
+  setSelectedCard: Function;
 };
 
-function SearchResult({ card }: Props) {
+function SearchResult({ card, setSelectedCard }: Props) {
   return (
-    <div className="search-result">
+    <div className="search-result" onClick={() => setSelectedCard(card)}>
       <div className="search-result-image-container">
         <img className="search-result-image" src={card.images[0]} />
       </div>
@@ -20,9 +22,7 @@ function SearchResult({ card }: Props) {
             <div>{card.type}</div>
           </div>
 
-          <div className="search-result-point">
-            <div>{formattedPoints(card.genesysPoints)}</div>
-          </div>
+          <GenesysPoints points={card.genesysPoints} />
         </div>
 
         <button>Add to Deck</button>
