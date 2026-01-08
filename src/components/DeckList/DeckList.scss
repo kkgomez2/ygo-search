@@ -1,0 +1,17 @@
+.deck {
+
+}
+
+.card-space {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.deck-list {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  width: 100%;
+  height: 100%;
+}

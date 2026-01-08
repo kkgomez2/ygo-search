@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { YGOCard } from "./types";
 import "./App.css";
 import CardSearch from "./components/CardSearch/CardSearch";
+import DeckList from "./components/DeckList/DeckList";
 
 function App() {
   const [highlightedCard, setHighlightedCard] = useState<YGOCard[]>();
@@ -12,7 +13,9 @@ function App() {
       {/* <h1>YGO Card Search</h1> */}
       <div className="app">
         <section className="card-info"></section>
-        <section className="deck"></section>
+        <section className="deck">
+          <DeckList />
+        </section>
         <CardSearch />
       </div>
     </main>

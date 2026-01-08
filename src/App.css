@@ -12,8 +12,12 @@ main {
 
 section {
   flex-grow: 1;
-  width: 100%;
   padding: 0.6rem;
   overflow-y: hidden;
   margin-bottom: 0;
+}
+
+section.deck {
+  flex-grow: 2;
+  max-width: 66%;
 }
