@@ -1,4 +1,5 @@
 import type { YGOCard } from "../../types";
+import { formattedPoints } from "../../utils/PointFormatter/PointFormatter";
 import GenesysPoints from "../GenesysPoints/GenesysPoints";
 import "./CardInfo.scss";
 
@@ -25,10 +26,10 @@ const CardInfo = ({ card }: Props) => {
                   <div className="card-info-level">LV: {card.level}</div>
                 )}
                 {card.atk && (
-                  <div className="card-info-atk">ATK: {card.atk}</div>
+                  <div className="card-info-atk">ATK: {formattedPoints(card.atk)}</div>
                 )}
                 {card.def && (
-                  <div className="card-info-def">DEF: {card.def}</div>
+                  <div className="card-info-def">DEF: {formattedPoints(card.def)}</div>
                 )}
               </div>
             </div>
