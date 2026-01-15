@@ -8,6 +8,7 @@ function formatCard(data: YGOCardResponse): YGOCard {
     type: data.frameType,
     typeLine: data.typeLine,
     level: data.level,
+    linkRating: data?.linkval,
     attribute: data.attribute,
     atk: data.atk,
     def: data.def,

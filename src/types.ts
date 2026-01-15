@@ -6,6 +6,7 @@ export interface YGOCardResponse {
   frameType: string;
   typeLine: string[];
   level: number;
+  linkval: number;
   attribute: string;
   atk: number;
   def: number;
@@ -21,6 +22,7 @@ export interface YGOCard {
   type: string;
   typeLine: string[];
   level: number;
+  linkRating: number;
   attribute: string;
   atk: number;
   def: number;

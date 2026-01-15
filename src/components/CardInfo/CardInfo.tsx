@@ -37,6 +37,11 @@ const CardInfo = ({ card }: Props) => {
                     DEF: {formattedPoints(card.def)}
                   </div>
                 )}
+                {card.type === "link" && card.linkRating && (
+                  <div className="card-info-link-rating">
+                    LINK-{card.linkRating}
+                  </div>
+                )}
               </div>
             </div>
           </div>
