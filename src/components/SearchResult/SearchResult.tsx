@@ -19,7 +19,7 @@ function SearchResult({ card, setSelectedCard }: Props) {
           <div className="search-result-info-text">
             <div className="search-result-name">{card.name}</div>
 
-            <div>{card.type}</div>
+            <div>{card.descriptor}</div>
           </div>
 
           <GenesysPoints points={card.genesysPoints} />

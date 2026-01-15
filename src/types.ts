@@ -2,6 +2,8 @@ export interface YGOCardResponse {
   id: number;
   name: string;
   type: string;
+  humanReadableCardType: string;
+  frameType: string;
   typeLine: string[];
   level: number;
   attribute: string;
@@ -15,6 +17,7 @@ export interface YGOCardResponse {
 export interface YGOCard {
   id: number;
   name: string;
+  descriptor: string;
   type: string;
   typeLine: string[];
   level: number;

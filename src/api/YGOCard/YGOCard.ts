@@ -4,7 +4,8 @@ function formatCard(data: YGOCardResponse): YGOCard {
   return {
     id: data.id,
     name: data.name,
-    type: data.type,
+    descriptor: data.humanReadableCardType,
+    type: data.frameType,
     typeLine: data.typeLine,
     level: data.level,
     attribute: data.attribute,

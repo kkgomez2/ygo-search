@@ -34,7 +34,7 @@ const CardInfo = ({ card }: Props) => {
               </div>
             </div>
           </div>
-          <div className="card-info-type">{card.type}</div>
+          <div className="card-info-descriptor">{card.descriptor}</div>
           <div className="card-info-desc">
             <p>{card.desc}</p>
           </div>
