@@ -22,14 +22,20 @@ const CardInfo = ({ card }: Props) => {
             </div>
             <div className="card-info-stats-container">
               <div className="card-info-stats">
-                {card.level && (
-                  <div className="card-info-level">LV: {card.level}</div>
+                {card.type !== "link" && card.level && (
+                  <div className="card-info-level">
+                    {card.type === "xyz" ? "Rank: " : "LV: "} {card.level}
+                  </div>
                 )}
                 {card.atk && (
-                  <div className="card-info-atk">ATK: {formattedPoints(card.atk)}</div>
+                  <div className="card-info-atk">
+                    ATK: {formattedPoints(card.atk)}
+                  </div>
                 )}
                 {card.def && (
-                  <div className="card-info-def">DEF: {formattedPoints(card.def)}</div>
+                  <div className="card-info-def">
+                    DEF: {formattedPoints(card.def)}
+                  </div>
                 )}
               </div>
             </div>
@@ -42,7 +48,7 @@ const CardInfo = ({ card }: Props) => {
       </div>
     );
   } else {
-    return <div className="card-info">Select a card for more info.</div>
+    return <div className="card-info">Select a card for more info.</div>;
   }
 };
 
