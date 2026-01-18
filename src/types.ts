@@ -22,11 +22,17 @@ export interface YGOCard {
   type: string;
   typeLine: string[];
   level: number;
-  linkRating: number;
+  linkRating?: number;
   attribute: string;
   atk: number;
   def: number;
   desc: string;
   genesysPoints: number;
   images: string[];
+}
+
+export interface YGODeck {
+  mainDeck: YGOCard[];
+  extraDeck: YGOCard[];
+  sideDeck: YGOCard[];
 }

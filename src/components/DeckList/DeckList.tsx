@@ -1,15 +1,18 @@
 import React from "react";
 import "./DeckList.scss";
+import type { YGOCard, YGODeck } from "../../types";
 
-type Props = {};
+type Props = {
+  deck: YGODeck;
+};
 
-const DeckList = (props: Props) => {
+const DeckList = ({ deck }: Props) => {
   const mainDeckCardSpaces = () => {
     let spaces = [];
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < deck.mainDeck.length ; i++) {
       spaces.push(
         <div className="card-space">
-          <img src="cards/monster.jpg" />
+          <img src={`${deck.mainDeck[i].images[0]}`} />
         </div>
       );
     }
@@ -18,10 +21,10 @@ const DeckList = (props: Props) => {
 
   const extraDeckCardSpaces = () => {
     let spaces = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < deck.extraDeck.length; i++) {
       spaces.push(
         <div className="card-space">
-          <img src="cards/extra.jpg" />
+          <img src={`${deck.extraDeck[i].images[0]}`} />
         </div>
       );
     }
